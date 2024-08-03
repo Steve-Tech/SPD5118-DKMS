@@ -535,7 +535,7 @@ MODULE_DEVICE_TABLE(of, spd5118_of_ids);
 #endif
 
 static struct i2c_driver spd5118_driver = {
-	.class		= I2C_CLASS_SPD | I2C_CLASS_HWMON,
+	.class		= I2C_CLASS_HWMON,
 	.driver = {
 		.name	= "spd5118",
 		.dev_groups = spd5118_groups,

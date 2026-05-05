@@ -389,7 +389,7 @@ static ssize_t spd5118_eeprom_read(struct i2c_client *client, char *buf,
 }
 
 static ssize_t eeprom_read(struct file *filp, struct kobject *kobj,
-			   struct bin_attribute *bin_attr,
+			   const struct bin_attribute *bin_attr,
 			   char *buf, loff_t off, size_t count)
 {
 	struct i2c_client *client = kobj_to_i2c_client(kobj);
@@ -418,7 +418,7 @@ out:
 
 static BIN_ATTR_RO(eeprom, SPD5118_EEPROM_SIZE);
 
-static struct bin_attribute *spd5118_bin_attrs[] = {
+static const struct bin_attribute *spd5118_bin_attrs[] = {
 	&bin_attr_eeprom,
 	NULL
 };
